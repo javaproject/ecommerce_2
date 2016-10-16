@@ -160,6 +160,12 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
+        //Dingo Laravel Service provider
+       // Dingo\Api\Provider\LaravelServiceProvider::class,
+
+        //JWT auth provider
+        Tymon\JWTAuth\Providers\JWTProvider::class,
+
 
     ],
 
@@ -210,7 +216,8 @@ return [
       'Html' => Collective\Html\HtmlFacade::class,
       'Image' => Intervention\Image\Facades\Image::class,
         'Input' => Illuminate\Support\Facades\Input::class,
-
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
 
 ];

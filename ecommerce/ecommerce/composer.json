@@ -13,7 +13,8 @@
         "laravelcollective/html": "^5.2",
         "pingpong/modules": "~2.0",
         "intervention/image": "^2.3",
-        "stripe/stripe-php": "3.*"
+        "stripe/stripe-php": "3.*",
+        "tymon/jwt-auth": " 0.5.*@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
