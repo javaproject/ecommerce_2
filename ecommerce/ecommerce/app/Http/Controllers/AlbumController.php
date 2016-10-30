@@ -16,11 +16,9 @@ use Illuminate\Support\Facades\Input;
 class AlbumController extends Controller
 {
     public function index()
-    {   
-
+    {
         if(Auth::user()->isAdmin())
         {
-           
          return view('admin.albums.index')->with('albums', Album::paginate(6));
         }
         else 
@@ -28,21 +26,16 @@ class AlbumController extends Controller
             $albums = Album::with('category')->whereHas('category', function($query){
                         $query->where('active', 1);
                     })->where('active', 1)->paginate(6);
-
                 if(!$albums)
                 {
                   return back()->with('no_albums_active','Sorry, no ACTIVE albums');
                 }
                 return view('admin.albums.index')->with('albums', $albums);
         }
-        
     }
-
     public function create()
     {
-
        $categories = Category::all();
-      
      return view('admin.albums.create')->with('categories',$categories);
     }
 
@@ -72,9 +65,9 @@ class AlbumController extends Controller
                 $al->save();
             
             Session::flash('album_created', 'Album Successfully Created !');
-            //return redirect()->route('album.index');
-
-         return view('admin.albums.index')->with('albums', Album::paginate(6));
+            return route('album.index');
+/*
+         return view('admin.albums.index')->with('albums', Album::paginate(6));*/
             }
     }
     public function show(Album $album)

@@ -14,8 +14,8 @@
      {{ Session::forget('album_updated') }}
                         
    @endif
- @if (session('album_updated'))
-    <div class="alert alert-success"> 
+   @if (session('album_updated'))
+    <div class="alert alert-success">
                   {{ Session::get('album_updated')  }}  </div>
      {{ Session::forget('album_updated') }}
                         

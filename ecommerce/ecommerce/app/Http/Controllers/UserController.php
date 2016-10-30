@@ -6,8 +6,9 @@ use File;
 use Session;
 use Auth;
 use Hash;
+use Request;
 use Illuminate\Support\MessageBag;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
@@ -52,7 +53,13 @@ class UserController extends Controller
 
         public function show(User $user)
         {
-            return view('admin.users.show', compact('user'));
+                // return HTML response
+                return view('admin.users.show', compact('user'));
+
+        }
+        public function showApi(Request $req)
+        {
+            return $req;
         }
          public function edit(User $user)
         {

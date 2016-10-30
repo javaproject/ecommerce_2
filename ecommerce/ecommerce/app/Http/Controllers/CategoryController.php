@@ -15,10 +15,8 @@ use Illuminate\Support\Facades\Input;
 
 class CategoryController extends Controller
 {
-
     public function index()
     {
-        
             if( !Auth::user()->isAdmin())
             {
                $categories = Category::where('active',1)->paginate(6);
