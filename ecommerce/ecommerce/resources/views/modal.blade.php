@@ -56,7 +56,7 @@
 				$('#modal').modal({show:true});
 					if($('#name').val() == '')
 					{
-						$('#error').text('fjdhfdjk');
+						$('#error').text('Testing modal');
 						return false;
 					}
 
